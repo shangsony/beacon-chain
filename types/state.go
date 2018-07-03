@@ -2,7 +2,8 @@ package types
 
 import (
 	"crypto/ecdsa"
-	"github.com/ethereum/go-ethereum/common"
+
+	"github.com/beacon-chain/common"
 )
 
 // ActiveState contains fields of current state of beacon chain,
