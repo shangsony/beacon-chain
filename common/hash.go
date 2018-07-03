@@ -1,11 +1,12 @@
 package common
 
 import (
-	"math/big"
-	"github.com/ethereum/go-ethereum/common/hexutil"
 	"fmt"
+	"math/big"
 	"math/rand"
 	"reflect"
+
+	"github.com/beacon-chain/common/hexutil"
 )
 
 // Lengths of hashes and addresses in bytes.
@@ -72,4 +73,3 @@ func BigToHash(b *big.Int) Hash { return BytesToHash(b.Bytes()) }
 // HexToHash sets byte representation of s to hash.
 // If b is larger than len(h), b will be cropped from the left.
 func HexToHash(s string) Hash { return BytesToHash(FromHex(s)) }
-
