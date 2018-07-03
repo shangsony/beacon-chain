@@ -14,3 +14,10 @@ go_rules_dependencies()
 go_register_toolchains()
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 gazelle_dependencies()
+
+load("@bazel_gazelle//:deps.bzl", "go_repository")
+go_repository(
+    name = "org_golang_x_crypto",
+    importpath = "golang.org/x/crypto",
+    commit = "a49355c7e3f8fe157a85be2f77e6e269a0f89602"
+)
