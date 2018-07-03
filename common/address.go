@@ -1,10 +1,11 @@
 package common
 
 import (
-	"math/big"
 	"encoding/hex"
-	"github.com/ethereum/go-ethereum/crypto/sha3"
 	"fmt"
+	"math/big"
+
+	"github.com/ethereum/go-ethereum/crypto/sha3"
 )
 
 // Address represents the 20 byte address of an Ethereum account.
@@ -25,7 +26,6 @@ func BigToAddress(b *big.Int) Address { return BytesToAddress(b.Bytes()) }
 // HexToAddress returns Address with byte values of s.
 // If s is larger than len(h), s will be cropped from the left.
 func HexToAddress(s string) Address { return BytesToAddress(FromHex(s)) }
-
 
 // IsHexAddress verifies whether a string can represent a valid hex-encoded
 // Ethereum address or not.

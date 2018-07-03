@@ -15,4 +15,3 @@ func TestBytesConversion(t *testing.T) {
 		t.Errorf("expected %x got %x", exp, hash)
 	}
 }
-

@@ -3,7 +3,7 @@ package common
 import (
 	"bytes"
 	"testing"
-	)
+)
 
 type BytesSuite struct{}
 
