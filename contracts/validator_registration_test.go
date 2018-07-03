@@ -66,7 +66,7 @@ func TestSetupAndContractRegistration(t *testing.T) {
 	}
 }
 
-// negative test case, deposit with less than 32 ETH
+// negative test case, deposit with less than 32 ETH.
 func TestRegisterWithLessThan32Eth(t *testing.T) {
 	testAccount, err := setup()
 	if err != nil {
@@ -82,7 +82,7 @@ func TestRegisterWithLessThan32Eth(t *testing.T) {
 	}
 }
 
-// negative test case, deposit more than 32 ETH
+// negative test case, deposit more than 32 ETH.
 func TestRegisterWithMoreThan32Eth(t *testing.T) {
 	testAccount, err := setup()
 	if err != nil {
@@ -98,7 +98,7 @@ func TestRegisterWithMoreThan32Eth(t *testing.T) {
 	}
 }
 
-// negative test case, test registering with the same public key twice
+// negative test case, test registering with the same public key twice.
 func TestRegisterTwice(t *testing.T) {
 	testAccount, err := setup()
 	if err != nil {
@@ -122,7 +122,7 @@ func TestRegisterTwice(t *testing.T) {
 	}
 }
 
-// normal test case, test depositing 32 ETH and verify validatorRegistered event is correctly emitted
+// normal test case, test depositing 32 ETH and verify validatorRegistered event is correctly emitted.
 func TestRegister(t *testing.T) {
 	testAccount, err := setup()
 	if err != nil {
