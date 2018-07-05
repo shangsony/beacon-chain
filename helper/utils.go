@@ -2,7 +2,7 @@ package utils
 
 import (
 	"errors"
-	"github.com/beacon-chain/types"
+	"github.com/prysmaticlabs/beacon-chain/types"
 	"github.com/ethereum/go-ethereum/common"
 	"golang.org/x/crypto/blake2s"
 )
