@@ -1,0 +1,5 @@
+# TODO: Set up remote caching.
+
+# Disable sandboxing since it may fail inside of Travis' containers because the
+# mount system call is not permitted.
+build --spawn_strategy=standalone --genrule_strategy=standalone
