@@ -2,8 +2,9 @@ package utils
 
 import (
 	"errors"
-	"github.com/prysmaticlabs/beacon-chain/types"
+
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/prysmaticlabs/beacon-chain/types"
 	"golang.org/x/crypto/blake2s"
 )
 
@@ -30,4 +31,5 @@ func Shuffle(seed common.Hash, validatorCount int) ([]types.ValidatorRecord, err
 			validators[i], validators[posToSwap] = validators[posToSwap], validators[i]
 		}
 	}
+	return validators, nil
 }
