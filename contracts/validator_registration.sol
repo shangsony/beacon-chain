@@ -1,13 +1,12 @@
 pragma solidity 0.4.23;
 
-
 contract ValidatorRegistration {
     event ValidatorRegistered(
         bytes32 pubKey,
         uint256 withdrawalShardID,
         address withdrawalAddressbytes32,
         bytes32 randaoCommitment
-        );
+    );
 
     mapping (bytes32 => bool) public usedPubkey;
     
