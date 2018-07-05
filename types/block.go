@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/prysmaticlabs/beacon-chain/common"
+	"github.com/ethereum/go-ethereum/common"
 )
 
 // Header contains the block header fields in beacon chain.
