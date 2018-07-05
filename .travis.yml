@@ -45,13 +45,15 @@ before_install:
 script:
   - |
     bazel \
-      --output_base=$HOME/.cache/bazel \
+      --batch \
+      --host_jvm_args=-Xmx500m --host_jvm_args=-Xms500m \
+      --bazelrc=.travis-bazelrc \
       test \
-      --config=ci \
-      --experimental_repository_cache="$HOME/.bazel_repository_cache" \
+      --local_resources=1536,1.5,0.5 \
+      --noshow_progress \
+      --verbose_failures \
+      --test_output=errors \
       //...
-  - |
-    bazel shutdown
 
 notifications:
   email: false
