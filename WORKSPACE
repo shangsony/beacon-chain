@@ -29,8 +29,8 @@ go_repository(
     # some manual fixes for c imports in the crypto package. This is forked 
     # branch should be updated from time to time with the latest go-ethereum 
     # code.
-    remote = "https://github.com/prestonvanloon/go-ethereum",
+    remote = "https://github.com/prysmaticlabs/bazel-go-ethereum",
     vcs = "git",
     # Last updated July 5, 2018
-    commit = "9a9975d0e3e687e5a745b7faefb210f1e5175c14", 
+    commit = "eb95493d32b6e1eb1cad63518637e1a958632389", 
 )
