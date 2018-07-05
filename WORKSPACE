@@ -31,6 +31,6 @@ go_repository(
     # code.
     remote = "https://github.com/prestonvanloon/go-ethereum",
     vcs = "git",
-    # Last updated July 4, 2018
-    commit = "14b5e66016ae887ff72435de3cba1699171876bb", 
+    # Last updated July 5, 2018
+    commit = "9a9975d0e3e687e5a745b7faefb210f1e5175c14", 
 )
