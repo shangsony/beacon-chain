@@ -21,3 +21,16 @@ go_repository(
     importpath = "golang.org/x/crypto",
     commit = "a49355c7e3f8fe157a85be2f77e6e269a0f89602"
 )
+go_repository(
+    name = "com_github_ethereum_go_ethereum",
+    importpath = "github.com/ethereum/go-ethereum",
+    # Note: go-ethereum is not bazel-friendly with regards to cgo. We have a 
+    # a fork that has resolved these issues by disabling HID/USB support and 
+    # some manual fixes for c imports in the crypto package. This is forked 
+    # branch should be updated from time to time with the latest go-ethereum 
+    # code.
+    remote = "https://github.com/prestonvanloon/go-ethereum",
+    vcs = "git",
+    # Last updated July 4, 2018
+    commit = "14b5e66016ae887ff72435de3cba1699171876bb", 
+)
