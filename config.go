@@ -1,4 +1,4 @@
-package beacon_chain
+package main
 
 const (
 	ATTESTER_COUNT         = 32

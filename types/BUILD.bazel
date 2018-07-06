@@ -4,6 +4,7 @@ go_library(
     name = "go_default_library",
     srcs = [
         "block.go",
+        "interfaces.go",
         "state.go",
     ],
     importpath = "github.com/prysmaticlabs/beacon-chain/types",

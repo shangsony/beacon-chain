@@ -16,11 +16,16 @@ load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 gazelle_dependencies()
 
 load("@bazel_gazelle//:deps.bzl", "go_repository")
+
+
 go_repository(
-    name = "org_golang_x_crypto",
-    importpath = "golang.org/x/crypto",
-    commit = "a49355c7e3f8fe157a85be2f77e6e269a0f89602"
+    name = "com_github_urfave_cli",
+    importpath = "github.com/urfave/cli",
+    remote = "https://github.com/urfave/cli",
+    vcs = "git",
+    commit = "8e01ec4cd3e2d84ab2fe90d8210528ffbb06d8ff"
 )
+
 go_repository(
     name = "com_github_ethereum_go_ethereum",
     importpath = "github.com/ethereum/go-ethereum",
