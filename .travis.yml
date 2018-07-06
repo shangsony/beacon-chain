@@ -54,6 +54,7 @@ matrix:
             --verbose_failures \
             --test_output=errors \
             //...
-
+        - ./check_gazelle.sh
+          
       notifications:
         email: false
