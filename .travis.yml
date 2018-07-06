@@ -12,7 +12,6 @@ matrix:
           go get github.com/alecthomas/gometalinter && gometalinter --install && gometalinter
     - os: linux
       env: V=0.15.0
-      go: 1.10.x
       before_install:
         - |
           if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
@@ -41,19 +40,22 @@ matrix:
           chmod +x install.sh
           ./install.sh --user
           rm -f install.sh
+      
+      install: true # Skip install go packages.
           
       script:
+        # Run all tests.
         - |
           bazel \
-            --batch \
-            --host_jvm_args=-Xmx500m --host_jvm_args=-Xms500m \
             --bazelrc=.travis-bazelrc \
             test \
-            --local_resources=1536,1.5,0.5 \
-            --noshow_progress \
-            --verbose_failures \
-            --test_output=errors \
             //...
+        
+        # Check that BUILD files are formatted  correctly.
+        - ./check_gazelle.sh
 
+        # Shutdown must be last.
+        - bazel shutdown 
+          
       notifications:
         email: false
