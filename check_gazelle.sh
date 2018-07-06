@@ -3,7 +3,8 @@
 # Continous Integration script to check that BUILD.bazel files are as expected
 # when generated from gazelle.
 
-# Duplicate stdout with redirection to 5.
+# Duplicate redirect 5 to stdout so that it can be captured, but still printed
+# nicely.
 exec 5>&1
 
 # Run gazelle while piping a copy of the output to stdout via 5.
