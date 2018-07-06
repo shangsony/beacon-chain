@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["utils.go"],
+    importpath = "github.com/prysmaticlabs/beacon-chain/helper",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//types:go_default_library",
+        "@com_github_ethereum_go_ethereum//common:go_default_library",
+        "@org_golang_x_crypto//blake2s:go_default_library",
+    ],
+)
