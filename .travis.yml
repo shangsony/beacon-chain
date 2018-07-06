@@ -8,8 +8,12 @@ matrix:
       env:
         - lint
       script:
-        - go get -u github.com/alecthomas/gometalinter
-        - gometalinter --tests --deadline=2m --disable-all --enable=goimports --enable=varcheck --enable=vet --enable=gofmt --enable=misspell --ennable=goconst --min-occurrences=5
+        - 
+          go get github.com/alecthomas/gometalinter
+          go get golang.org/x/tools/cmd/goimports
+          go get github.com/opennota/check/cmd/varcheck
+          go get github.com/alecthomas/gometalinter
+          gometalinter --tests --deadline=2m --disable-all --enable=goimports --enable=varcheck --enable=vet --enable=gofmt --enable=misspell --enable=goconst --min-occurrences=5
     - os: linux
       env: V=0.15.0
       go: 1.9.x
