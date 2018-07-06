@@ -1,6 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
 gazelle(
     name = "gazelle",
     prefix = "github.com/prysmaticlabs/beacon-chain",
+)
+
+go_library(
+    name = "go_default_library",
+    srcs = ["config.go"],
+    importpath = "github.com/prysmaticlabs/beacon-chain",
+    visibility = ["//visibility:public"],
 )
