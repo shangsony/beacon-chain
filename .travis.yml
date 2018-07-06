@@ -4,7 +4,7 @@ sudo: false
 matrix:
   include:
     - os: linux
-      go: 1.9.x
+      go: 1.10.x
       env:
         - lint
       script:
@@ -12,7 +12,7 @@ matrix:
           go get github.com/alecthomas/gometalinter && gometalinter --install && gometalinter
     - os: linux
       env: V=0.15.0
-      go: 1.9.x
+      go: 1.10.x
       before_install:
         - |
           if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
