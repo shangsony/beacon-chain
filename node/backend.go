@@ -5,13 +5,13 @@ package node
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"os/signal"
 	"reflect"
 	"sync"
 	"syscall"
 
-	"github.com/ethereum/go-ethereum/log"
 	"github.com/prysmaticlabs/beacon-chain/types"
 	"github.com/urfave/cli"
 )
@@ -39,8 +39,7 @@ func New(ctx *cli.Context) (*BeaconNode, error) {
 // Start the BeaconNode service and kicks off each service's main loop.
 func (s *BeaconNode) Start() {
 	s.lock.Lock()
-
-	log.Info("Starting sharding node")
+	log.Println("Starting sharding node")
 
 	for _, kind := range s.serviceTypes {
 		// Start each service in order of registration.
@@ -55,12 +54,12 @@ func (s *BeaconNode) Start() {
 		signal.Notify(sigc, syscall.SIGINT, syscall.SIGTERM)
 		defer signal.Stop(sigc)
 		<-sigc
-		log.Info("Got interrupt, shutting down...")
+		log.Println("Got interrupt, shutting down...")
 		go s.Close()
 		for i := 10; i > 0; i-- {
 			<-sigc
 			if i > 1 {
-				log.Warn("Already shutting down, interrupt more to panic.", "times", i-1)
+				log.Println("Already shutting down, interrupt more to panic.", "times", i-1)
 			}
 		}
 		panic("Panic closing the beacon chain node")
@@ -77,10 +76,10 @@ func (s *BeaconNode) Close() {
 
 	for kind, service := range s.services {
 		if err := service.Stop(); err != nil {
-			log.Crit(fmt.Sprintf("Could not stop the following service: %v, %v", kind, err))
+			log.Println(fmt.Sprintf("Could not stop the following service: %v, %v", kind, err))
 		}
 	}
-	log.Info("Stopping beacon chain node")
+	log.Println("Stopping beacon chain node")
 
 	// unblock n.Wait
 	close(s.stop)
