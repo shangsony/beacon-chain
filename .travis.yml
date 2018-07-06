@@ -8,6 +8,7 @@ matrix:
       env:
         - lint
       script:
+        - go get -u github.com/alecthomas/gometalinter
         - gometalinter --tests --deadline=2m --disable-all --enable=goimports --enable=varcheck --enable=vet --enable=gofmt --enable=misspell --ennable=goconst --min-occurrences=5
     - os: linux
       env: V=0.15.0
