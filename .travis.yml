@@ -1,13 +1,14 @@
 language: go
-
+go_import_path: github.com/prysmaticlabs/beacon-chain
+sudo: false
 matrix:
   include:
     - os: linux
-        go: 1.9.x
-        env:
-          - lint
-        script:
-          - gometalinter --tests --deadline=2m --disable-all --enable=goimports --enable=varcheck --enable=vet --enable=gofmt --enable=misspell --ennable=goconst --min-occurrences=5
+      go: 1.9.x
+      env:
+        - lint
+      script:
+        - gometalinter --tests --deadline=2m --disable-all --enable=goimports --enable=varcheck --enable=vet --enable=gofmt --enable=misspell --ennable=goconst --min-occurrences=5
     - os: linux
       env: V=0.15.0
       go: 1.9.x
