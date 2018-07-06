@@ -1,0 +1,12 @@
+package beaconchain
+
+const (
+	ATTESTER_COUNT         = 32
+	ATTESTER_REWARD        = 1
+	EPOCH_LENGTH           = 5
+	SHARD_COUNT            = 20
+	DEFAULT_BALANCE        = 32000
+	DEFAULT_SWITCH_DYNASTY = 9999999999999999999
+	MAX_VALIDATORS         = 2 ^ 24
+	NOTARIES_PER_CROSSLINK = 100
+)
