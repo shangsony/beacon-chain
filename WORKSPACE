@@ -27,6 +27,14 @@ go_repository(
 )
 
 go_repository(
+    name = "com_github_golang_glog",
+    importpath = "github.com/golang/glog",
+    remote = "https://github.com/golang/glog",
+    vcs = "git",
+    commit = "23def4e6c14b4da8ac2ed8007337bc5eb5007998"
+)
+
+go_repository(
     name = "com_github_ethereum_go_ethereum",
     importpath = "github.com/ethereum/go-ethereum",
     # Note: go-ethereum is not bazel-friendly with regards to cgo. We have a 
