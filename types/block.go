@@ -1,8 +1,6 @@
 package types
 
-import (
-	"github.com/ethereum/go-ethereum/common"
-)
+import "github.com/ethereum/go-ethereum/common"
 
 // Header contains the block header fields in beacon chain.
 type Header struct {
