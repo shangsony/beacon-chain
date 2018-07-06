@@ -9,7 +9,7 @@ matrix:
         - lint
       script:
         - 
-          go get github.com/alecthomas/gometalinter && gometalinter --tests --deadline=2m --disable-all --enable=goimports --enable=varcheck --enable=vet --enable=gofmt --enable=misspell --enable=goconst --min-occurrences=5
+          go get github.com/alecthomas/gometalinter && go get golang.org/x/tools/cmd/goimports && go get github.com/surullabs/lint/varcheck && go get github.com/jgautheron/goconst && go get github.com/client9/misspell && gometalinter --tests --deadline=2m --disable-all --enable=goimports --enable=varcheck --enable=vet --enable=gofmt --enable=misspell --enable=goconst --min-occurrences=5
     - os: linux
       env: V=0.15.0
       go: 1.9.x
