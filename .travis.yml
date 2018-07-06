@@ -12,7 +12,6 @@ matrix:
           go get github.com/alecthomas/gometalinter && gometalinter --install && gometalinter
     - os: linux
       env: V=0.15.0
-      go: 1.10.x
       before_install:
         - |
           if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
@@ -50,7 +49,6 @@ matrix:
             --bazelrc=.travis-bazelrc \
             test \
             --local_resources=1536,1.5,0.5 \
-            --noshow_progress \
             --verbose_failures \
             --test_output=errors \
             //...
